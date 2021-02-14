@@ -2,11 +2,6 @@ const express = require("express");
 const Question = require("../models/question");
 const router = new express.Router();
 
-//Testing endpoint
-router.get("/", (req, res) => {
-  Math.floor(Math.random() * 9);
-});
-
 //Add New Question
 router.post("/api/questions/new", async (req, res) => {
   const question = new Question({
@@ -41,10 +36,3 @@ router.get("/api/questions/random5", async (req, res) => {
 });
 
 module.exports = router;
-
-// const random5 = await Question.findRandom()
-//       .limit(5)
-//       .exec(function (err, random5) {
-//         console.log(random5);
-//         return random5;
-//       });
