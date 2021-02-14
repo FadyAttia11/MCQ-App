@@ -2,6 +2,18 @@ const express = require("express");
 const Question = require("../models/question");
 const router = new express.Router();
 
+router.post("/api/questions/new", async (req, res) => {
+  const question = new Question({
+    ...req.body,
+  });
+  try {
+    await question.save();
+    res.status(201).send();
+  } catch (e) {
+    res.status(500).send(e);
+  }
+});
+
 router.get("/api/", async (req, res) => {
   console.log("backend is working");
 });

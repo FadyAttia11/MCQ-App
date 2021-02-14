@@ -3,6 +3,8 @@ require("./db/mongoose");
 const questionRouter = require("./routers/question");
 
 const app = express();
+
+app.use(express.json());
 app.use(questionRouter);
 
 const port = process.env.PORT || 5000;
