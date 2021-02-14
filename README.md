@@ -4,7 +4,9 @@
 
 MCQ App is a web trivia app that you can answer questions on it and then see your score.
 
-You can go directly to the deployed version from here to ##[try the website now](https://fadyattia-mcq-client.netlify.app/)
+You can go directly to the deployed version from here to
+
+## [try the website now](https://fadyattia-mcq-client.netlify.app/)
 
 Here's some of it's features:
 
