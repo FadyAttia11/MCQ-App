@@ -26,7 +26,7 @@ const Question = () => {
 
   useEffect(() => {
     if (Object.keys(question).length !== 0) {
-      setAnswers(question.answers);
+      setAnswers(shuffleArray(question.answers));
     }
   }, [question]);
 
@@ -38,6 +38,17 @@ const Question = () => {
       history.push("/result");
     }
   }, [count]);
+
+  // Randomize array in-place using Durstenfeld shuffle algorithm
+  const shuffleArray = (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      let temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+    }
+    return array;
+  };
 
   const handleClickingAnswer = (answerNum) => {
     const userAnswer = answers[answerNum];
