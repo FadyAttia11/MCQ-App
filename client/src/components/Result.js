@@ -24,11 +24,18 @@ const Result = () => {
 
   return (
     <div>
-      <h1>Congratz you just finished the MCQ Quiz Successfully</h1>
-      <h2>
-        {name}, Your Answered {trueAnswers} out of 5 Questions correctly
-      </h2>
-      <button onClick={handleStartingOver}>Start The MCQ Quiz Again</button>
+      <div className="jumbotron text-center">
+        <h1>Congratz you just finished the MCQ Quiz Successfully</h1>
+        <p>You will get your result now!</p>
+      </div>
+      <div className="container text-center">
+        <h2>
+          {name}, You Answered {trueAnswers} out of 5 Questions correctly
+        </h2>
+        <button onClick={handleStartingOver} className="btn btn-danger mt-5">
+          Start The MCQ Quiz Again
+        </button>
+      </div>
     </div>
   );
 };

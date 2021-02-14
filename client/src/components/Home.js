@@ -1,6 +1,8 @@
 import React, { useEffect, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
+import "../styles.css";
+
 import QuestionsApi from "../context/QuestionsApi";
 import NameApi from "../context/NameApi";
 
@@ -33,19 +35,29 @@ const Home = () => {
 
   return (
     <div>
-      <h1>MCQ App</h1>
-      <form onSubmit={(e) => handleSubmitForm(e)}>
-        <input
-          name="name"
-          type="text"
-          id="name"
-          placeholder="Enter Your Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-        />
-        <input type="submit" value="Start The MCQ Exam Now" />
-      </form>
+      <div className="jumbotron text-center">
+        <h1>MCQ App</h1>
+        <p>Answer 5 Questions and get your result now!</p>
+      </div>
+      <div className="small-width text-center">
+        <form onSubmit={(e) => handleSubmitForm(e)}>
+          <input
+            name="name"
+            type="text"
+            id="name"
+            placeholder="Enter Your Name"
+            className="form-control"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
+          <input
+            type="submit"
+            className="btn btn-primary form-control mt-3"
+            value="Start The MCQ Exam Now"
+          />
+        </form>
+      </div>
     </div>
   );
 };

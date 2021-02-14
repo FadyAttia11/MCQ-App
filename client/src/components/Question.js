@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useHistory } from "react-router-dom";
+import "../styles.css";
+
 import NameApi from "../context/NameApi";
 import QuestionsApi from "../context/QuestionsApi";
 import CurrentQuesCountApi from "../context/CurrentQuesCountApi";
@@ -59,22 +61,50 @@ const Question = () => {
 
   return (
     <div>
-      <h2>Hello, {name}</h2>
-      <h1>Answer The Upcoming Questions</h1>
-      <h2>{question.title}</h2>
-      <button type="submit" onClick={() => handleClickingAnswer(0)}>
-        {answers[0]}
-      </button>
-      <button type="submit" onClick={() => handleClickingAnswer(1)}>
-        {answers[1]}
-      </button>
-      <button type="submit" onClick={() => handleClickingAnswer(2)}>
-        {answers[2]}
-      </button>
-      <button type="submit" onClick={() => handleClickingAnswer(3)}>
-        {answers[3]}
-      </button>
-      <button onClick={handleStartingOver}>Start The MCQ Quiz Again</button>
+      <div className="jumbotron text-center">
+        <h1>Answer The Upcoming Questions</h1>
+        <p>{name}, Answer 5 Questions and get your result now!</p>
+      </div>
+      <div className="container text-center">
+        <h3>{question.title}</h3>
+        <div className="mid-width">
+          <button
+            type="submit"
+            className="btn btn-info btn-block mt-4"
+            onClick={() => handleClickingAnswer(0)}
+          >
+            {answers[0]}
+          </button>
+
+          <button
+            type="submit"
+            className="btn btn-info btn-block"
+            onClick={() => handleClickingAnswer(1)}
+          >
+            {answers[1]}
+          </button>
+
+          <button
+            type="submit"
+            className="btn btn-info btn-block"
+            onClick={() => handleClickingAnswer(2)}
+          >
+            {answers[2]}
+          </button>
+
+          <button
+            type="submit"
+            className="btn btn-info btn-block"
+            onClick={() => handleClickingAnswer(3)}
+          >
+            {answers[3]}
+          </button>
+        </div>
+
+        <button onClick={handleStartingOver} className="btn btn-danger mt-5">
+          Restart The MCQ Quiz Again
+        </button>
+      </div>
     </div>
   );
 };
