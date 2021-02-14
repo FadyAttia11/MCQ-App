@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const random = require("mongoose-random");
 
 const questionSchema = new mongoose.Schema(
   {
@@ -20,6 +21,8 @@ const questionSchema = new mongoose.Schema(
     timestamps: true,
   }
 );
+
+questionSchema.plugin(random, { path: "r" }); // by default `path` is `random`. It's used internally to store a random value on each doc.
 
 const Question = mongoose.model("Question", questionSchema);
 

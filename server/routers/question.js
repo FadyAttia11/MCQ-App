@@ -2,22 +2,25 @@ const express = require("express");
 const Question = require("../models/question");
 const router = new express.Router();
 
+//Testing endpoint
+router.get("/", (req, res) => {
+  Math.floor(Math.random() * 9);
+});
+
+//Add New Question
 router.post("/api/questions/new", async (req, res) => {
   const question = new Question({
     ...req.body,
   });
   try {
     await question.save();
-    res.status(201).send();
+    res.status(201).send(question);
   } catch (e) {
     res.status(500).send(e);
   }
 });
 
-router.get("/api/", async (req, res) => {
-  console.log("backend is working");
-});
-
+//Get All Questions
 router.get("/api/questions/all", async (req, res) => {
   try {
     const questions = await Question.find({});
@@ -27,37 +30,21 @@ router.get("/api/questions/all", async (req, res) => {
   }
 });
 
+//Get Random 5 Questions
+router.get("/api/questions/random5", async (req, res) => {
+  try {
+    const random5 = await Question.findRandom().limit(5);
+    res.send(random5);
+  } catch (e) {
+    res.status(500).send(e);
+  }
+});
+
 module.exports = router;
 
-// router.get("/", async (req, res) => {
-//     console.log("backend is working");
-//     const title = "how can you do that?";
-//     const answers = [
-//       {
-//         id: "8759847324",
-//         answer: "by playing football",
-//       },
-//       {
-//         id: "235435345",
-//         answer: "by not doing anything",
-//       },
-//       {
-//         id: "5345234342",
-//         answer: "i dont know",
-//       },
-//     ];
-//     const solution = "by playing football";
-
-//     const question = new Question({
-//       title,
-//       answers,
-//       solution,
-//     });
-
-//     try {
-//       await question.save();
-//       res.status(201).send({ question });
-//     } catch (e) {
-//       res.status(400).send(e);
-//     }
-//   });
+// const random5 = await Question.findRandom()
+//       .limit(5)
+//       .exec(function (err, random5) {
+//         console.log(random5);
+//         return random5;
+//       });
