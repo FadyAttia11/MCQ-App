@@ -4,7 +4,6 @@ import { Switch, Route } from "react-router-dom";
 import Home from "./Home";
 import Question from "./Question";
 import Result from "./Result";
-import Restarting from "./Restarting";
 
 const Routes = () => {
   return (
@@ -12,7 +11,6 @@ const Routes = () => {
       <Route exact path="/" component={Home} />
       <Route path="/question" component={Question} />
       <Route path="/result" component={Result} />
-      <Route path="/restarting" component={Restarting} />
     </Switch>
   );
 };
