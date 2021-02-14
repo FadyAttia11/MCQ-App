@@ -8,7 +8,7 @@ import NameApi from "../context/NameApi";
 
 const Home = () => {
   const { name, setName } = useContext(NameApi);
-  const { questions, setQuestions } = useContext(QuestionsApi);
+  const { setQuestions } = useContext(QuestionsApi);
 
   let history = useHistory();
 
@@ -21,12 +21,6 @@ const Home = () => {
     };
     getRandom5Questions();
   }, []);
-
-  useEffect(() => {
-    if (questions.length !== 0) {
-      console.log("have just gotten questions: ", questions);
-    }
-  }, [questions]);
 
   const handleSubmitForm = (e) => {
     e.preventDefault();

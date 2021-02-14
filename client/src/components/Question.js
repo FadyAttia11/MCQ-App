@@ -52,12 +52,8 @@ const Question = () => {
 
   const handleClickingAnswer = (answerNum) => {
     const userAnswer = answers[answerNum];
-    console.log("answer cliked, the answer is: ", userAnswer);
     if (userAnswer === question.solution) {
-      console.log("the answer is right");
       setTrueAnswers((prevState) => prevState + 1);
-    } else {
-      console.log("the answer is wrong");
     }
     setCount((prevState) => prevState + 1);
   };
