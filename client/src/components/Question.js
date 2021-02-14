@@ -12,7 +12,7 @@ const Question = () => {
   const { name, setName } = useContext(NameApi);
   const { questions, setQuestions } = useContext(QuestionsApi);
   const { count, setCount } = useContext(CurrentQuesCountApi);
-  const { trueAnswers, setTrueAnswers } = useContext(TrueAnswersApi);
+  const { setTrueAnswers } = useContext(TrueAnswersApi);
 
   let history = useHistory();
 

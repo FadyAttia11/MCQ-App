@@ -23,8 +23,6 @@ const Home = () => {
   useEffect(() => {
     if (questions.length !== 0) {
       console.log("have just gotten questions: ", questions);
-      //   console.log("the count now is", count);
-      //   console.log("the true answers now is", trueAnswers);
     }
   }, [questions]);
 

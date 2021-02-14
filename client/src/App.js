@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import Routes from "./components/Routes";
-import axios from "axios";
 
 import QuestionsApi from "./context/QuestionsApi";
 import NameApi from "./context/NameApi";
