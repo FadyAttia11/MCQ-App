@@ -29,51 +29,47 @@ First you need to Clone this repo
 git clone https://github.com/FadyAttia11/MCQ-App.git
 ```
 
-Then you can choose one of the upcoming three options to install dependencies & run the app
+Then you need to cd to the root of the project by writing
 
-We recommend the first option, to install the front&back end with one command, and also start both of them with just one command.
+```sh
+cd MCQ-App
+```
 
-### 1. install and start both frontend & backend with one command (the RECOMMENDED option):
+After that you need to install the dependencies for Frontend & Backend then run the entire App
+
+### 1. install and start Frontend & Backend :
 
 Note: All the commands are written from the root directory of the project.
 
-After cloning this repository, you can install all packages with:
+After cloning this repository, and cd to the root directory of the project, you can install Frontend & Backend dependencies from:
 
 ```bash
-npm run install-all
+npm run client-install
 ```
 
-This will run two scripts concurrently to install the dependencies for client & server side.
+and
 
-After installing all the dependencies for client & server side, you can run both sides also with just one command:
+```bash
+npm run server-install
+```
+
+This will run two scripts to install the dependencies for client & server side.
+
+After installing all the dependencies for client & server side, you can run both sides with just ONE command:
 
 ```bash
 npm run all
 ```
 
-### 2. install and run frontend ONLY:
+### 2. Run JUST Frontend or Backend ONLY: (NOT RECOMMENDED)
 
-if you just want to install frontend dependencies you can do it from:
-
-```sh
-npm run client-install
-```
-
-and if you want to run just the frontend now you can do it from:
+if you just want to run only Frontend or Backend, you can do it from:
 
 ```sh
 npm run client
 ```
 
-### 3. install and run backend ONLY:
-
-if you just want to install backend dependencies you can do it from:
-
-```sh
-npm run server-install
-```
-
-and if you want to run just the backend now you can do it from:
+or
 
 ```sh
 npm run server
