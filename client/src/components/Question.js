@@ -19,6 +19,12 @@ const Question = () => {
   let history = useHistory();
 
   useEffect(() => {
+    if (questions.length === 0) {
+      history.push("/");
+    }
+  }, []);
+
+  useEffect(() => {
     if (questions.length !== 0) {
       setQuestion(questions[count]);
     }

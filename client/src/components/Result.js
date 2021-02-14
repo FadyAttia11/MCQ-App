@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-
+import "../styles.css";
 import NameApi from "../context/NameApi";
 import QuestionsApi from "../context/QuestionsApi";
 import CurrentQuesCountApi from "../context/CurrentQuesCountApi";
@@ -8,11 +8,17 @@ import TrueAnswersApi from "../context/TrueAnswersApi";
 
 const Result = () => {
   const { name, setName } = useContext(NameApi);
-  const { setQuestions } = useContext(QuestionsApi);
+  const { questions, setQuestions } = useContext(QuestionsApi);
   const { setCount } = useContext(CurrentQuesCountApi);
   const { trueAnswers, setTrueAnswers } = useContext(TrueAnswersApi);
 
   let history = useHistory();
+
+  useEffect(() => {
+    if (questions.length === 0) {
+      history.push("/");
+    }
+  }, []);
 
   const handleStartingOver = () => {
     setName("");
